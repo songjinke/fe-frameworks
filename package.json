@@ -1,6 +1,10 @@
 {
   "name": "root",
   "private": true,
+  "scripts": {
+    "install": "lerna bootstrap",
+    "start": "lerna run --parallel start"
+  },
   "devDependencies": {
     "lerna": "^3.13.0"
   }
