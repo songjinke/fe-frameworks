@@ -1,3 +1,5 @@
+// React 16 Lifecycle: https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
 import React from 'react';
 
 // 定义子组件
@@ -9,21 +11,17 @@ class LifeCycle extends React.Component {
     this.state = { text: '子组件的文本' };
   }
 
-  // 初始化渲染时调用
-  // UNSAFE: https://reactjs.org/docs/react-component.html#unsafe_componentwillmount
-  componentWillMount() {
-    console.log('componentWillMount方法执行');
+  // 初始化/更新时调用
+  static getDerivedStateFromProps(props, state) {
+    console.log('getDerivedStateFromProps方法执行');
+    return {
+      fatherText: props.text,
+    };
   }
 
   // 初始化渲染时调用
   componentDidMount() {
     console.log('componentDidMount方法执行');
-  }
-
-  // 父组件修改组件的props时会调用
-  // UNSAFE: https://reactjs.org/docs/react-component.html#unsafe_componentwillreceiveprops
-  componentWillReceiveProps(nextProps) {
-    console.log('componentWillReceiveProps方法执行');
   }
 
   // 组件更新时调用
@@ -32,15 +30,16 @@ class LifeCycle extends React.Component {
     return true;
   }
 
-  // 组件更新时调用
-  // UNSAFE: https://reactjs.org/docs/react-component.html#unsafe_componentwillupdate
-  componentWillUpdate(nextProps, nextState) {
-    console.log('componentWillUpdate方法执行');
+  // 组件更新时调用: https://reactjs.org/docs/react-component.html#getsnapshotbeforeupdate
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    console.log('getSnapshotBeforeUpdate方法执行');
+    return 'haha';
   }
 
   // 组件更新后调用
-  componentDidUpdate(preProps, preState) {
+  componentDidUpdate(preProps, preState, valueFromSnapshot) {
     console.log('componentDidUpdate方法执行');
+    console.log('从 getSnapshotBeforeUpdate 获取到的值是', valueFromSnapshot);
   }
 
   // 组件卸载时调用
@@ -65,7 +64,7 @@ class LifeCycle extends React.Component {
           </button>
         </div>
         <p className="textContent">{this.state.text}</p>
-        <p className="fatherContent">{this.props.text}</p>
+        <p className="fatherContent">{this.state.fatherText}</p>
       </div>
     );
   }
