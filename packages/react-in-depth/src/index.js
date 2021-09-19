@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import SimpleList from './components/SimpleList';
+import LifeCycleContainer from './components/LifeCycleContainer';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <SimpleList name="Taylor" />
+    <LifeCycleContainer />
   </React.StrictMode>,
   document.getElementById('root')
 );
