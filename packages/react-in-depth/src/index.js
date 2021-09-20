@@ -1,12 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import LifeCycleContainer from './components/LifeCycleContainer';
+import Father from './components/Father';
 import reportWebVitals from './reportWebVitals';
+
+// Theme context
+export const ThemeContext = React.createContext();
+
+// User context
+export const UserContext = React.createContext();
 
 ReactDOM.render(
   <React.StrictMode>
-    <LifeCycleContainer />
+    <ThemeContext.Provider value="dark">
+      <UserContext.Provider value={{ name: 'Jacky' }}>
+        <Father />
+      </UserContext.Provider>
+    </ThemeContext.Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
