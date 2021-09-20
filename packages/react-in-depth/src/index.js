@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Father from './components/Father';
+import ProfileApp from './components/ProfileApp';
 import reportWebVitals from './reportWebVitals';
 
 // Theme context
@@ -14,7 +14,7 @@ ReactDOM.render(
   <React.StrictMode>
     <ThemeContext.Provider value="dark">
       <UserContext.Provider value={{ name: 'Jacky' }}>
-        <Father />
+        <ProfileApp />
       </UserContext.Provider>
     </ThemeContext.Provider>
   </React.StrictMode>,
