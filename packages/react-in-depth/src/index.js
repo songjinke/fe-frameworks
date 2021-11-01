@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import ProfileApp from './components/ProfileApp';
+import TextButtonClass from './components/TextButtonClass';
+import TextButtonHooks from './components/TextButtonHooks';
 import reportWebVitals from './reportWebVitals';
 
 // Theme context
@@ -12,11 +13,8 @@ export const UserContext = React.createContext();
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeContext.Provider value="dark">
-      <UserContext.Provider value={{ name: 'Jacky' }}>
-        <ProfileApp />
-      </UserContext.Provider>
-    </ThemeContext.Provider>
+    <TextButtonClass />
+    <TextButtonHooks />
   </React.StrictMode>,
   document.getElementById('root')
 );
