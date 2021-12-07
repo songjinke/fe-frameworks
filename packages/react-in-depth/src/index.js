@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import BadExampleHooks from './components/BadExampleHooks';
+import DemoSetStateClass from './components/DemoSetStateClass';
 import reportWebVitals from './reportWebVitals';
 
 // Theme context
@@ -12,7 +12,7 @@ export const UserContext = React.createContext();
 
 ReactDOM.render(
   <React.StrictMode>
-    <BadExampleHooks />
+    <DemoSetStateClass />
   </React.StrictMode>,
   document.getElementById('root')
 );

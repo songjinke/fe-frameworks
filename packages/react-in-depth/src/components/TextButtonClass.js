@@ -14,6 +14,7 @@ export default class TextButton extends Component {
       };
     });
   };
+
   render() {
     const { text } = this.state;
     return (
