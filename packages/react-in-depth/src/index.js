@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import DemoSetStateClass from './components/DemoSetStateClass';
+import DemoSetStateFunction from './components/DemoSetStateFunction';
 import reportWebVitals from './reportWebVitals';
 
 // Theme context
@@ -12,7 +12,7 @@ export const UserContext = React.createContext();
 
 ReactDOM.render(
   <React.StrictMode>
-    <DemoSetStateClass />
+    <DemoSetStateFunction />
   </React.StrictMode>,
   document.getElementById('root')
 );
