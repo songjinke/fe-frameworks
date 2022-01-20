@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import DemoSetStateFunction from './components/DemoSetStateFunction';
+import FiberDemoNoConcurrent from './components/FiberDemoNoConcurrent';
 import reportWebVitals from './reportWebVitals';
 
 // Theme context
@@ -12,7 +12,7 @@ export const UserContext = React.createContext();
 
 ReactDOM.render(
   <React.StrictMode>
-    <DemoSetStateFunction />
+    <FiberDemoNoConcurrent />
   </React.StrictMode>,
   document.getElementById('root')
 );
