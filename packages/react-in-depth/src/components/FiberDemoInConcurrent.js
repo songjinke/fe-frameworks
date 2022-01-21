@@ -6,7 +6,7 @@
  */
 import { useState } from 'react';
 
-function FiberDemoNoConcurrent() {
+function FiberDemoInConcurrent() {
   const [state, setState] = useState(0);
   return (
     <div className="App">
@@ -22,4 +22,4 @@ function FiberDemoNoConcurrent() {
   );
 }
 
-export default FiberDemoNoConcurrent;
+export default FiberDemoInConcurrent;
